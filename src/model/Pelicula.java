@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Pelicula {
@@ -12,11 +11,11 @@ public class Pelicula {
     private Tiempo duración;
     private String titulo;
     private String director;
-    private List<String> actores;
+    private List<Actor> actores;
     private double calificación;
     private int visualizaciones;
 
-    public Pelicula(String genero, int año, Imagen caratula, Tiempo duración, String titulo, String director, List<String> actores, double calificación, int visualizaciones) {
+    public Pelicula(String genero, int año, Imagen caratula, Tiempo duración, String titulo, String director, List<Actor> actores, double calificación, int visualizaciones) {
         this.genero = genero;
         this.año = año;
         this.caratula = caratula;
@@ -52,7 +51,7 @@ public class Pelicula {
         return director;
     }
 
-    public List<String> getActores() {
+    public List<Actor> getActores() {
         return actores;
     }
 
@@ -64,6 +63,8 @@ public class Pelicula {
         return visualizaciones;
     }
 
+    // Este toString() quizá no sea el mejor, pero me ha parecido
+    // que la información es bastante fácil de ver.
     @Override
     public String toString() {
         return "Pelicula{" +

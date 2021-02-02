@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
 public class PeliculasList {
@@ -88,11 +87,7 @@ public class PeliculasList {
         }
     }
 
-    // Aproximación a patrón Iterator.
-    public boolean hasNext() {
-        if (peliculaList.get(pos + 1) != null) return true;
-        return false;
-    }
+    // Iteradores (circulares; desde la última posición vuelve a la primera, y viceversa).
     public Pelicula next() {
         pos=(pos+1)%(peliculaList.size());
         notifyObservers();
